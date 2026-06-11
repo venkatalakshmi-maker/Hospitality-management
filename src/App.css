@@ -1,0 +1,562 @@
+/* ===== RESET & BASE ===== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: #1a1a2e;
+  color: #2d3436;
+}
+
+/* ===== APP WRAPPER ===== */
+.app-wrapper {
+  min-height: 100vh;
+  background: #f0f2f5;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== BROWSER BAR ===== */
+.browser-bar{
+  background: #e1e1e3;
+  color: #030303;
+  border-bottom: 1px solid #dce3ea;
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* ===== APP CONTAINER ===== */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  background: #f0f4f8;
+}
+
+/* ===== TAB BAR ===== */
+.tab-bar {
+  display: flex;
+  align-items: center;
+  background: #f0f4f8;
+  padding: 0 16px;
+  gap: 12px;
+  height: 46px;
+  border-bottom: 1px solid #dce3ea;
+}
+
+.tab {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #ffffff;
+  color: #2d3436;
+  padding: 6px 14px;
+  border-radius: 8px 8px 0 0;
+  font-size: 13px;
+  font-weight: 500;
+  height: 36px;
+  border: 1px solid #dce3ea;
+  border-bottom: none;
+}
+
+/* ---- Tab Logo (gradient waveform icon) ---- */
+.tab-logo-img {
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  background: linear-gradient(135deg, #00c6ff, #00e5a0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.tab-close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #636e72;
+  display: flex;
+  align-items: center;
+  padding: 2px;
+  border-radius: 3px;
+  margin-left: 4px;
+}
+.tab-close:hover { background: #dfe6e9; }
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #ffffff;
+  border: 1px solid #c8d0d8;
+  border-radius: 20px;
+  padding: 6px 16px;
+  flex: 1;
+  max-width: 520px;
+  color: #999;
+  margin-left: 40px;
+}
+
+.search-bar input {
+  background: none;
+  border: none;
+  outline: none;
+  color: #2d3436;
+  font-size: 13px;
+  width: 100%;
+}
+.search-bar input::placeholder { color: #aaa; }
+
+.top-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-left: auto;
+}
+
+.campus-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #444;
+  font-size: 13px;
+  cursor: pointer;
+  background: #ffffff;
+  border: 1px solid #c8d0d8;
+  border-radius: 20px;
+  padding: 4px 12px;
+}
+
+.user-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #333;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+/* ---- Patient Avatar Circle (header me) ---- */
+.patient-avatar-circle {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #00c6ff, #00b894);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* ===== MAIN LAYOUT ===== */
+.main-layout {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* ===== SIDEBAR ===== */
+.sidebar {
+  width: 220px;
+  background: #ffffff;
+  border-right: 1px solid #e0e6ed;
+  display: flex;
+  flex-direction: column;
+  padding: 16px 0;
+  flex-shrink: 0;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 0 12px;
+  flex: 1;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 12px;
+  border-radius: 8px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 13.5px;
+  color: #636e72;
+  text-align: left;
+  width: 100%;
+  transition: background 0.15s, color 0.15s;
+  font-weight: 400;
+}
+
+.nav-item:hover {
+  background: #f0f7ff;
+  color: #0984e3;
+}
+
+.nav-item--active {
+  background: #e8f4fd;
+  color: #0984e3;
+  font-weight: 600;
+}
+
+.nav-item--active .nav-icon { color: #0984e3; }
+
+.nav-icon {
+  display: flex;
+  align-items: center;
+  color: #b2bec3;
+  flex-shrink: 0;
+}
+
+.nav-item--active .nav-icon,
+.nav-item:hover .nav-icon { color: #0984e3; }
+
+/* Sidebar Footer */
+.sidebar-footer {
+  padding: 12px 16px;
+  border-top: 1px solid #e0e6ed;
+  margin-top: auto;
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.avatar {
+  width: 34px;
+  height: 34px;
+  background: linear-gradient(135deg, #00c6ff, #00b894);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.user-name {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: #2d3436;
+}
+
+.user-role {
+  display: block;
+  font-size: 11px;
+  color: #b2bec3;
+}
+
+.logout-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #636e72;
+  font-size: 13px;
+  padding: 4px 0;
+}
+.logout-btn:hover { color: #e17055; }
+
+/* ===== MAIN CONTENT ===== */
+.main-content {
+  flex: 1;
+  padding: 24px 28px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ===== CONTENT HEADER ===== */
+.content-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.welcome-title {
+  font-size: 26px;
+  font-weight: 700;
+  color: #2d3436;
+  line-height: 1.2;
+}
+
+.welcome-sub {
+  font-size: 13.5px;
+  color: #636e72;
+  margin-top: 4px;
+}
+
+/* ===== BUTTONS ===== */
+.btn-primary {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #0984e3;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+  white-space: nowrap;
+}
+.btn-primary:hover { background: #0773c5; }
+
+.btn-ghost {
+  background: none;
+  border: 1px solid #dfe6e9;
+  color: #636e72;
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-size: 13.5px;
+  cursor: pointer;
+  transition: border-color 0.15s;
+}
+.btn-ghost:hover { border-color: #b2bec3; color: #2d3436; }
+
+.btn-teal {
+  background: #00b4d8;
+  color: white;
+  border: none;
+  padding: 9px 24px;
+  border-radius: 8px;
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.btn-teal:hover { background: #0096b7; }
+
+/* ===== STATS GRID ===== */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.stat-card {
+  background: #ffffff;
+  border: 1px solid #e8edf2;
+  border-radius: 12px;
+  padding: 18px 20px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+}
+
+.stat-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.stat-icon--blue { background: #e3f2fd; color: #0984e3; }
+.stat-icon--teal { background: #e0f7fa; color: #00b4d8; }
+.stat-icon--orange { background: #fff3e0; color: #e17055; }
+
+.stat-label {
+  font-size: 12px;
+  color: #b2bec3;
+  margin-bottom: 4px;
+  font-weight: 500;
+}
+
+.stat-value {
+  font-size: 14.5px;
+  font-weight: 700;
+  color: #2d3436;
+}
+
+/* ===== MID GRID ===== */
+.mid-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/* ===== CARDS ===== */
+.card {
+  background: #ffffff;
+  border: 1px solid #e8edf2;
+  border-radius: 12px;
+  padding: 20px 22px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+}
+
+.card-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #2d3436;
+  margin-bottom: 16px;
+}
+
+/* ===== APPOINTMENT CARD ===== */
+.appointment-body {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.doctor-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.doctor-icon {
+  width: 44px;
+  height: 44px;
+  background: #e3f2fd;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0984e3;
+  flex-shrink: 0;
+}
+
+.doctor-name {
+  font-size: 15px;
+  font-weight: 700;
+  color: #0984e3;
+}
+
+.doctor-dept {
+  font-size: 12.5px;
+  color: #636e72;
+  margin-top: 2px;
+}
+
+.appointment-meta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.meta-label {
+  font-size: 11px;
+  color: #b2bec3;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.meta-value {
+  font-size: 14px;
+  font-weight: 600;
+  color: #2d3436;
+}
+
+.appointment-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+/* ===== NOTIFICATIONS CARD ===== */
+.notification-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.notification-item {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.notif-icon {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.notif-title {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #2d3436;
+}
+
+.notif-sub {
+  font-size: 12px;
+  color: #636e72;
+  margin-top: 2px;
+  line-height: 1.4;
+}
+
+.notif-time {
+  font-size: 11px;
+  color: #b2bec3;
+  margin-top: 4px;
+}
+
+/* ===== HEALTH SUMMARY CARD ===== */
+.health-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.health-label {
+  font-size: 11.5px;
+  color: #b2bec3;
+  font-weight: 500;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.health-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tag {
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.tag--red    { background: #ffeaa7; color: #d63031; }
+.tag--orange { background: #ffeaa7; color: #e17055; }
+.tag--blue   { background: #dfe6e9; color: #2d3436; }
+
+/* ===== SCROLLBAR ===== */
+.main-content::-webkit-scrollbar { width: 6px; }
+.main-content::-webkit-scrollbar-track { background: transparent; }
+.main-content::-webkit-scrollbar-thumb { background: #dfe6e9; border-radius: 3px; }

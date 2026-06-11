@@ -1,0 +1,140 @@
+.ma-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Header */
+.ma-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.ma-title {
+  font-size: 26px;
+  font-weight: 700;
+  color: #2d3436;
+  line-height: 1.2;
+}
+
+.ma-sub {
+  font-size: 13.5px;
+  color: #636e72;
+  margin-top: 4px;
+}
+
+.ma-btn-book {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #0984e3;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  white-space: nowrap;
+  transition: background 0.15s;
+}
+.ma-btn-book:hover {
+  background: #0773c5;
+}
+
+/* Card */
+.ma-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.ma-card {
+  background: #ffffff;
+  border: 1px solid #e8edf2;
+  border-radius: 12px;
+  padding: 18px 22px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Doctor icon box */
+.ma-doc-icon {
+  width: 52px;
+  height: 52px;
+  background: #0984e3;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  flex-shrink: 0;
+}
+
+/* Info */
+.ma-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.ma-doctor {
+  font-size: 15px;
+  font-weight: 700;
+  color: #2d3436;
+}
+
+.ma-dept {
+  font-size: 13px;
+  color: #636e72;
+}
+
+.ma-date {
+  font-size: 12.5px;
+  color: #0984e3;
+  margin-top: 2px;
+}
+
+/* Actions */
+.ma-actions {
+  display: flex;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.ma-btn-reschedule {
+  background: none;
+  border: 1px solid #dde4ed;
+  color: #636e72;
+  padding: 8px 18px;
+  border-radius: 8px;
+  font-size: 13.5px;
+  cursor: pointer;
+  font-family: inherit;
+  transition: border-color 0.15s;
+}
+.ma-btn-reschedule:hover {
+  border-color: #b2bec3;
+  color: #2d3436;
+}
+
+.ma-btn-virtual {
+  background: #00b4d8;
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.15s;
+}
+.ma-btn-virtual:hover {
+  background: #0096b7;
+}

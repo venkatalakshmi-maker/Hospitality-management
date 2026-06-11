@@ -1,0 +1,91 @@
+.mr-page {}
+
+.mr-section {
+  background: #fff;
+  border: 1px solid #e4e9ee;
+  border-radius: 10px;
+  padding: 24px 28px;
+  margin-top: 8px;
+}
+
+.mr-section-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1a2332;
+  margin: 0 0 16px 0;
+}
+
+.mr-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.mr-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border: 1px solid #e4e9ee;
+  border-radius: 8px;
+  gap: 20px;
+}
+
+.mr-row:last-child {
+  border-bottom: 1px solid #e4e9ee;
+}
+
+
+
+.mr-row-left {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.mr-type {
+  font-size: 14px;
+  font-weight: 700;
+  color: #1a2332;
+}
+
+.mr-doctor-date {
+  font-size: 13px;
+  color: #7a8694;
+  margin-bottom: 6px;
+}
+
+.mr-diagnosis,
+.mr-treatment {
+  font-size: 13px;
+  color: #444c58;
+  line-height: 1.5;
+}
+
+.mr-bold {
+  font-weight: 700;
+  color: #1a2332;
+  margin-right: 4px;
+}
+
+.mr-download-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  border: 1px solid #d0d7de;
+  border-radius: 6px;
+  background: #fff;
+  color: #555;
+  font-size: 13px;
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin-top: 4px;
+  transition: background 0.15s;
+}
+
+.mr-download-btn:hover {
+  background: #f4f7f9;
+}
