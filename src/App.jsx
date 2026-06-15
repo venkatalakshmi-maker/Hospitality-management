@@ -7,6 +7,7 @@ import MedicalRecords from "./components/MedicalRecords";
 import Prescriptions from "./components/Prescriptions";
 import LabReports from "./components/LabReports";
 import Billing from "./components/Billing";
+import MyDocuments from "./components/MyDocuments";
 
 // ---- icons ----
 
@@ -65,6 +66,16 @@ function DollarIcon() {
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
       <line x1="12" y1="1" x2="12" y2="23" />
       <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+    </svg>
+  );
+}
+
+function UploadIcon() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+      <polyline points="17 8 12 3 7 8" />
+      <line x1="12" y1="3" x2="12" y2="15" />
     </svg>
   );
 }
@@ -148,13 +159,6 @@ function TabLogo() {
 function PatientAvatar() {
   return (
     <div className="patient-avatar-circle">
-      {/* 
-        Agar apni image use karni ho toh:
-        import patientImg from "./assets/patient.png";
-        aur yahan <img src={patientImg} alt="patient" /> likh
-        
-        Abhi teal circle with person SVG icon use ho raha hai
-      */}
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2">
         <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
         <circle cx="12" cy="7" r="4" />
@@ -171,6 +175,7 @@ const navItems = [
   { label: "Medical Records",    icon: <FileIcon />     },
   { label: "Prescriptions",      icon: <PillIcon />     },
   { label: "Lab Reports",        icon: <ActivityIcon /> },
+  { label: "My Documents",       icon: <UploadIcon />   },
   { label: "Billing & Payments", icon: <DollarIcon />   },
 ];
 
@@ -211,7 +216,7 @@ export default function App() {
             </div>
             <div className="user-badge">
               <BellIcon />
-              <PatientAvatar />
+  
               <span>John Anderson</span>
             </div>
           </div>
@@ -257,6 +262,8 @@ export default function App() {
               <Prescriptions />
             ) : activePage === "Lab Reports" ? (
               <LabReports />
+            ) : activePage === "My Documents" ? (
+              <MyDocuments />
             ) : activePage === "Billing & Payments" ? (
               <Billing />
             ) : activePage === "My Appointments" ? (
